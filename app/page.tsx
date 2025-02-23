@@ -5,7 +5,8 @@ import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import Testimonials from "@/components/sections/Testimonials";
-
+import WorkExperience from "@/components/sections/WorkExperience"; 
+import Education from "@/components/sections/Education"; 
 import {motion} from "framer-motion"
 
 
@@ -13,6 +14,8 @@ export default function Home() {
   return (
  <main className="min-h-screen bg-background">
   <Hero/>
+  <Education/>
+  <WorkExperience/>
   <Skills/>
   <Testimonials/>
   <Projects/>
@@ -27,7 +30,7 @@ export default function Home() {
       animate={{opacity:1 , y:0}}
       transition={{duration:0.5}}
       > 
-      <GithubStats username="singhayush007?OO" />
+      <GithubStats username="singhayush007" />
 
       </motion.div>
   </section>

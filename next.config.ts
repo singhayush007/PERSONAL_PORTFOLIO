@@ -9,6 +9,9 @@ const nextConfig = {
       'raw.githubusercontent.com'
     ]
   },
+  env: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN, // Ensure GitHub Token is accessible
+  },
 };
 
 module.exports = nextConfig;

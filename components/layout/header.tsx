@@ -27,8 +27,8 @@ const Header = () => {
 
     const handleResumeDownload = () => {
         const link = document.createElement("a");
-        link.href = "/Ayush_Singh_Resume.pdf";
-        link.download = "Ayush_Singh_Resume.pdf";
+        link.href = "/AyushSinghCV.pdf";
+        link.download = "AyushSinghCV.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

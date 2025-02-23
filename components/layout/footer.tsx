@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -62,17 +62,22 @@ export function Footer() {
 
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground">
-                Delhi, In
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="hover:text-yellow-400 transition-colors cursor-pointer">
+                  Delhi, In
+                </span>
               </li>
-              <li>
-                <a href="mailto:john@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary" />
+                <a href="mailto:ayushsingh24958@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                   ayushsingh24958@gmail.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+917007589734" className="text-muted-foreground hover:text-primary transition-colors">
                   7007589734
                 </a>
               </li>
@@ -92,3 +97,4 @@ export function Footer() {
     </footer>
   );
 }
+
