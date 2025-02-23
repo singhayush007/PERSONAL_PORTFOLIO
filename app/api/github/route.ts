@@ -33,13 +33,14 @@ export async function GET(request: NextRequest) {
     `;
 
     const response = await octokit.graphql(query, { username });
-    // @ts-ignore
+    
+    // @ts-expect-error: GitHub API response might have unexpected structure
     const calendar = response.user.contributionsCollection.contributionCalendar;
     
     // Flatten the weeks array to get all contribution days
-    // @ts-ignore
+    // @ts-expect-error: Ensuring correct TypeScript inference for contributionDays
     const contributions = calendar.weeks.flatMap(week => 
-      // @ts-ignore
+      // @ts-expect-error: Mapping over each contribution day might cause TypeScript warning
       week.contributionDays.map(day => ({
         count: day.contributionCount,
         date: day.date
@@ -48,9 +49,9 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       user: {
-        totalContributions: calendar.totalContributions
+        totalContributions: calendar.totalContributions,
       },
-      contributions
+      contributions,
     });
   } catch (error) {
     console.error('GitHub API Error:', error);
@@ -60,4 +61,5 @@ export async function GET(request: NextRequest) {
     );
   }
 }
+
 

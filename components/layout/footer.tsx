@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Heart, MapPin, Phone } from "lucide-react";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 
 export function Footer() {
   return (

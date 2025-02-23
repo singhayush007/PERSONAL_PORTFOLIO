@@ -18,14 +18,15 @@ const Education = () => {
           Chandigarh Engineering College, Punjab
         </h3>
         <p className="text-lg mt-2">
-          Bachelor's of Technology in <span className="font-semibold">Electronics and Communication Engineering</span>
+          Bachelor&apos;s of Technology in{" "}
+          <span className="font-semibold">
+            Electronics and Communication Engineering
+          </span>
         </p>
         <p className="text-md mt-1">
           <span className="font-semibold">CGPA:</span> 7.57
         </p>
-        <p className="text-sm mt-1 text-gray-400">
-          Aug 2020 - Jun 2024
-        </p>
+        <p className="text-sm mt-1 text-gray-400">Aug 2020 - Jun 2024</p>
       </motion.div>
     </section>
   );

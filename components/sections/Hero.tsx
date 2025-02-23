@@ -16,10 +16,10 @@ const Hero = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        Hi, I'm <span className="text-primary">Ayush Singh</span>
+                        Hi, I&apos;m <span className="text-primary">Ayush Singh</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-                    Designing and developing intuitive digital experiences that inspire.
+                        Designing and developing intuitive digital experiences that inspire.
                     </p>
                     <div className="flex gap-4">
                         <Link href="mailto:ayushsingh24958@gmail.com">
@@ -60,3 +60,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

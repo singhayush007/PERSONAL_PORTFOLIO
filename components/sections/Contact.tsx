@@ -1,63 +1,62 @@
-import React from "react";
+"use client";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { Card } from "../ui/card";
-import { ContactForm } from "../contact-form";
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Mail } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
-const Contact = () => {
-  return (
-    <section className="container mx-auto px-4 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl font-bold mb-6">
-            Let's <span className="text-primary">Connect</span>
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your visions.
-          </p>
-          <div className="flex gap-4 mb-8">
-            <Button variant={"outline"} size={"icon"} asChild>
-              <a href="https://github.com/singhayush007" target="_blank">
-                <Github className="w-5 h-5" />
-              </a>
-            </Button>
-            <Button variant={"outline"} size={"icon"} asChild>
-              <a href="www.linkedin.com/in/singhayush007" target="_blank">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </Button>
-            <Button variant={"outline"} size={"icon"} asChild>
-              <a href="mailto:ayushsingh24958@gmail.com" target="_blank">
-                <Mail className="w-5 h-5" />
-              </a>
-            </Button>
-          </div>
-          <Card className="px-6 py-6">
-            <ContactForm />
-          </Card>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex justify-center items-center mt-20"
-        >
-          <Image
-            src={"/contact.svg"}
-            alt="Contact Illustrations"
-            width={600}
-            height={600}
-          />
-        </motion.div>
-      </div>
-    </section>
-  );
+
+const Hero = () => {
+    return (
+        <section className="container mx-auto px-4 pt-32 pb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                        Hi, I&apos;m <span className="text-primary">Ayush Singh</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+                        Designing and developing intuitive digital experiences that inspire.
+                    </p>
+                    <div className="flex gap-4">
+                        <Link href="mailto:ayushsingh24958@gmail.com">
+                            <Button
+                                variant="outline"
+                                className="gap-2 text-white border-white hover:bg-yellow-500 hover:text-black"
+                            >
+                                <Mail className="w-4 h-4" />
+                                Contact Me
+                            </Button>
+                        </Link>
+                        <Link href="https://github.com/singhayush007" target="_blank">
+                            <Button variant="outline" className="gap-2 border-white">
+                                <Github className="w-4 h-4" />
+                                Github
+                            </Button>
+                        </Link>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex justify-center"
+                >
+                    <Image
+                        src="/hero.svg"
+                        alt="Developer Illustration"
+                        width={500}
+                        height={500}
+                        priority
+                    />
+                </motion.div>
+            </div>
+        </section>
+    );
 };
 
-export default Contact;
+export default Hero;

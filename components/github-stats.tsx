@@ -73,7 +73,7 @@ export default function GitHubStats({ username }: { username: string }) {
     const currentStreak = stats.contributions
         .slice()
         .reverse()
-        .reduce((streak, day, index, array) => {
+        .reduce((streak, day, index) => {
             if (index === 0 && day.count === 0) return 0;
             if (day.count > 0) return streak + 1;
             return streak;
