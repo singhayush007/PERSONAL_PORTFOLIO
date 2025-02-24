@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Heart, MapPin, Phone } from "lucide-react";
-//import { motion } from "framer-motion";
 
 export function Footer() {
   return (
@@ -15,7 +14,7 @@ export function Footer() {
               Full Stack Developer crafting modern web experiences with a focus on user
               experience and performance.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               <Button variant="outline" size="icon" asChild>
                 <a href="https://github.com/singhayush007" target="_blank" rel="noopener noreferrer">
                   <Github className="w-4 h-4" />
@@ -26,7 +25,7 @@ export function Footer() {
                   <Linkedin className="w-4 h-4" />
                 </a>
               </Button>
-              <Button variant="outline" size="icon" asChild>
+              <Button variant="outline" size="icon" asChild className="flex-shrink-0">
                 <a href="mailto:ayushsingh24958@gmail.com">
                   <Mail className="w-4 h-4" />
                 </a>
@@ -70,13 +69,13 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 <a href="mailto:ayushsingh24958@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                   ayushsingh24958@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <a href="tel:+917007589734" className="text-muted-foreground hover:text-primary transition-colors">
                   7007589734
                 </a>
@@ -96,5 +95,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
-
+} 

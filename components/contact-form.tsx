@@ -1,9 +1,9 @@
 "use client";
-
+import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Form,
   FormControl,
@@ -17,12 +17,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "Name must be atleast 2 characters"),
+  email: z.string().email("Invalid Email address"),
+  message: z.string().min(10, "message must be atleast 10 characters"),
 });
 
-export function ContactForm() {
+const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,9 +33,10 @@ export function ContactForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Here you would typically send the form data to your backend
+    // backend logic here
     console.log(values);
-    toast.success("Message sent successfully!");
+    toast("Message sent sucessfully.")
+
     form.reset();
   }
 
@@ -49,25 +50,29 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input placeholder="Ayush Singh" {...field} />
               </FormControl>
+
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>E-Mail</FormLabel>
               <FormControl>
-                <Input placeholder="john@example.com" {...field} />
+                <Input placeholder="jhon@example.com" {...field} />
               </FormControl>
+
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="message"
@@ -76,19 +81,23 @@ export function ContactForm() {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell me about your project..."
-                  className="min-h-[120px]"
+                  placeholder="Tell me about your requirements"
                   {...field}
+                  className="min-h-[120px]"
                 />
               </FormControl>
+
               <FormMessage />
             </FormItem>
           )}
         />
         <Button type="submit" className="w-full">
-          Send Message
+          Send message
         </Button>
       </form>
     </Form>
   );
-}
+};
+
+export default ContactForm; 
+
