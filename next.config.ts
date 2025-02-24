@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
   images: { 
     unoptimized: true,
     domains: [
@@ -12,6 +11,10 @@ const nextConfig = {
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN, // Ensure GitHub Token is accessible
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
+

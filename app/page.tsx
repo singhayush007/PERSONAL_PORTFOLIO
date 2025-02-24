@@ -7,7 +7,6 @@ import Skills from "@/components/sections/Skills";
 import Testimonials from "@/components/sections/Testimonials";
 import WorkExperience from "@/components/sections/WorkExperience"; 
 import Education from "@/components/sections/Education"; 
-import ContactForm from "@/components/contact-form";
 import { motion } from "framer-motion";
 
 export default function Home() {
